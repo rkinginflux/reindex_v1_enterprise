@@ -30,7 +30,14 @@ https://docs.influxdata.com/enterprise_influxdb/v1/administration/configure/conf
 5) Rebuild the TSI index. Use the influx_inspect command line client (CLI) to rebuild the TSI index, 
    make sure to include `-max-cache-size` & `-max-log-file-size` settings corrisponding to the `cache-max-memory-size` & `max-index-log-file-size` from the influxdb.conf file :
 
-e.g.  `influx_inspect buildtsi -max-cache-size 1000000000 -max-log-file-size 131072 -datadir /var/lib/influxdb/data/ -waldir /var/lib/influxdb/wal/`
+e.g.  
+```bash
+influx_inspect buildtsi \
+    -max-cache-size 1000000000 \
+    -max-log-file-size 131072 \
+    -datadir /var/lib/influxdb/data/ \
+    -waldir /var/lib/influxdb/wal/
+```
 
 6) Start up the Influx service
 
